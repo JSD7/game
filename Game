@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+
+    <script>
+        // The random number the player needs to guess
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        // The player's current guess
+        let playerGuess;
+
+        // The number of guesses the player has made
+        let numberOfGuesses = 0;
+
+        while(playerGuess != randomNumber) {
+            playerGuess = prompt("Guess a number between 1 and 100:");
+
+            numberOfGuesses++;
+
+            if(playerGuess < randomNumber) {
+                alert("Too low! Try again.");
+            } else if(playerGuess > randomNumber) {
+                alert("Too high! Try again.");
+            }
+        }
+
+        alert("Congratulations! You guessed the number in " + numberOfGuesses + " tries.");
+    </script>
+</body>
+</html>
